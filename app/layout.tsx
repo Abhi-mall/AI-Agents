@@ -17,6 +17,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-inter bg-[#F9FBFD] text-[#1B1F23]" >
         {children}
+       
+        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
       </body>
     </html>
   );
