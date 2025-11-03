@@ -24,10 +24,10 @@ animate={{ opacity: 1, y: 0 }}
 transition={{ duration: 0.8 }}
 className="relative z-10 text-4xl md:text-6xl font-poppins font-extrabold text-white leading-tight"
 >
-Automate Conversations. <br />
-<span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white">
+Smarter Support. Faster Results. <br />
+{/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-white">
 Elevate Customer Experience.
-</span>
+</span> */}
 </motion.h1>
 <motion.p
 initial={{ opacity: 0 }}
@@ -35,9 +35,7 @@ animate={{ opacity: 1 }}
 transition={{ delay: 0.3 }}
 className="relative z-10 mt-6 max-w-2xl text-gray-300 text-lg"
 >
-Empower your business with next-generation AI chatbots, voice agents,
-and intelligent automation that engages customers and scales support
-effortlessly.
+AI-powered chat and voice automation that reduces response time and increases customer satisfaction.
 </motion.p>
 
 
@@ -72,11 +70,11 @@ Watch Demo
 
 
 {/* Glow */}
-<motion.div
+{/* <motion.div
 animate={{ opacity: [0.15, 0.45, 0.15] }}
 transition={{ duration: 6, repeat: Infinity }}
 className="absolute bottom-[-100px] w-[400px] h-[400px] bg-gradient-to-r from-[#2b2b2b] to-[#1f1f1f] blur-[180px] rounded-full"
-></motion.div>
+></motion.div> */}
 </section>
 );
 }

@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 
 const solutions = [
-  { title: "💬 AI Chatbots", desc: "Human-like chatbots available 24/7." },
-  { title: "🎙️ Voice Agents", desc: "Automated call-based customer support." },
-  { title: "⚙️ Custom AI", desc: "Tailored automation for your workflow." },
+  { title: "💬 AI Chatbots", desc: "Human-like chatbots that answer questions, book meetings, and convert visitors - 24/7." },
+  { title: "🎙️ Voice Agents", desc: "Automated voice agents that answer calls, book appointments, and route customers natural-sounding and reliable." },
+  { title: "⚙️ Custom AI", desc: "Custom models and automation that integrate into your systems: intent routing, document understanding, recommendation engines, and bespoke workflows." },
 ];
 
 export default function Solutions() {
