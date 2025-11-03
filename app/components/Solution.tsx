@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants, Transition } from "framer-motion";
 
 const solutions = [
   {
@@ -16,22 +16,47 @@ const solutions = [
   },
 ];
 
-const containerVariants = {
+// typed transition for container
+const containerTransition: Transition = {
+  staggerChildren: 0.12,
+  when: "beforeChildren",
+  duration: 0.5,
+};
+
+// typed transitions for cards
+const cardShowTransition: Transition = {
+  type: "spring",
+  stiffness: 110,
+  damping: 16,
+};
+
+const cardHoverTransition: Transition = {
+  type: "spring",
+  stiffness: 300,
+  damping: 20,
+};
+
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 8 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { staggerChildren: 0.12, when: "beforeChildren", duration: 0.5 },
+    transition: containerTransition,
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 18, scale: 0.995 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 110, damping: 16 } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: cardShowTransition,
+  },
   hover: {
     scale: 1.03,
     y: -6,
-    transition: { type: "spring" as const, stiffness: 300, damping: 20 },
+    transition: cardHoverTransition,
   },
 };
 
@@ -73,7 +98,6 @@ export default function Solutions() {
               variants={cardVariants}
               whileHover="hover"
               className="rounded-2xl bg-[#F9FBFD] p-8 shadow-sm border border-gray-200 transition-shadow"
-              // we set a neutral border by default; framer will apply inline styles for hover if needed
               style={{ willChange: "transform, box-shadow, border-color" }}
             >
               <div className="flex flex-col h-full">
