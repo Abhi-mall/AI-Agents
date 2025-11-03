@@ -31,7 +31,7 @@ const cardVariants = {
   hover: {
     scale: 1.03,
     y: -6,
-    transition: { type: "spring", stiffness: 300, damping: 20 },
+    transition: { type: "spring" as const, stiffness: 300, damping: 20 },
   },
 };
 
