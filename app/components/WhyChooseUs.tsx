@@ -22,10 +22,7 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section
-      id="about"
-      className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100"
-    >
+    <section id="about" className="py-20 bg-[#212121]">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
         <motion.h2
@@ -33,7 +30,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-poppins font-bold text-gray-900"
+          className="text-3xl md:text-4xl font-poppins font-bold text-white"
         >
           Why Businesses Choose Affix AI
         </motion.h2>
@@ -44,7 +41,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-4 text-gray-600 max-w-2xl mx-auto"
+          className="mt-4 text-gray-300 max-w-2xl mx-auto"
         >
           We help businesses deliver smarter, faster, and more personalized
           customer experiences with our intelligent AI automation solutions.
@@ -60,12 +57,12 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
-              className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all text-left"
+              className="p-6 bg-[#262626] border border-gray-700 rounded-xl shadow-sm hover:shadow-lg transition-all text-left"
+              role="article"
+              aria-label={b.title}
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {b.title}
-              </h3>
-              <p className="text-gray-600">{b.desc}</p>
+              <h3 className="text-xl font-semibold text-white mb-2">{b.title}</h3>
+              <p className="text-gray-300">{b.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -78,7 +75,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <button className="bg-black text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-gray-800 transition">
+          <button className="bg-white text-black px-6 py-3 rounded-lg font-medium shadow-md hover:bg-gray-100 transition">
             Book a Free Consultation
           </button>
         </motion.div>

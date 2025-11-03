@@ -9,11 +9,15 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navBgClass = scrolled ? "backdrop-blur-md bg-white/80 shadow-lg" : "bg-transparent";
+  const navBgClass = scrolled
+    ? "backdrop-blur-md bg-[#212121]/80 shadow-lg"
+    : "bg-transparent";
+
+  const navItems = ["Home", "Solutions", "About", "Contact"];
 
   return (
     <motion.nav
@@ -21,61 +25,80 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${navBgClass}`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <h1 className="text-2xl font-extrabold font-poppins text-black">
-          <span className="text-gray-700">Affix</span> AI
-        </h1>
+        <a href="#home" className="inline-flex items-center gap-2">
+          <h1 className="text-2xl font-extrabold font-poppins text-white leading-none">
+            <span className="text-gray-300">Affix</span> AI
+          </h1>
+        </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 text-sm font-medium text-black">
-          {["Home", "Solutions", "About", "Contact"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-gray-600">
+        <div className="hidden md:flex gap-8 text-sm font-medium text-white">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="hover:text-gray-300 transition-colors"
+            >
               {item}
             </a>
           ))}
         </div>
 
         {/* CTA */}
-        <button className="hidden md:flex items-center bg-black text-white px-5 py-2 rounded-lg font-semibold text-sm shadow-md hover:bg-gray-800">
-          Get a Demo
-        </button>
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="#demo"
+            className="items-center bg-white text-black px-5 py-2 rounded-lg font-semibold text-sm shadow-md hover:bg-gray-100 transition"
+          >
+            Get a Demo
+          </a>
+        </div>
 
         {/* Mobile Toggle */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-lg text-black"
+          onClick={() => setMenuOpen((s) => !s)}
+          className="md:hidden p-2 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden flex flex-col items-center gap-4 py-6 bg-white/95 text-black font-medium"
-        >
-          {["Home", "Solutions", "About", "Contact"].map((item) => (
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={menuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
+        transition={{ duration: 0.18 }}
+        className={`md:hidden ${menuOpen ? "block" : "hidden"}`}
+      >
+        <div className="flex flex-col items-center gap-4 py-6 bg-[#1f1f1f] text-white font-medium">
+          {navItems.map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
-              className="hover:text-gray-600"
+              className="hover:text-gray-300 transition-colors"
             >
               {item}
             </a>
           ))}
-          <button
+
+          <a
+            href="#demo"
             onClick={() => setMenuOpen(false)}
-            className="bg-black text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-gray-800"
+            className="mt-2 bg-white text-black px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-gray-100 transition"
+            role="button"
           >
             Get a Demo
-          </button>
-        </motion.div>
-      )}
+          </a>
+        </div>
+      </motion.div>
     </motion.nav>
   );
 }
