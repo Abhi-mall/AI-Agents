@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-[#E8F1FF] via-[#F9FBFD] to-white"
+      className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-poppins font-bold text-[#0A2540]"
+          className="text-3xl md:text-4xl font-poppins font-bold text-gray-900"
         >
           Why Businesses Choose Affix AI
         </motion.h2>
@@ -59,10 +59,10 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03 }}
               className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all text-left"
             >
-              <h3 className="text-xl font-semibold text-[#0A2540] mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {b.title}
               </h3>
               <p className="text-gray-600">{b.desc}</p>
@@ -78,7 +78,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <button className="bg-gradient-to-r from-[#4F9CF9] to-[#00C4B3] text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition">
+          <button className="bg-black text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-gray-800 transition">
             Book a Free Consultation
           </button>
         </motion.div>

@@ -1,64 +1,11 @@
 "use client";
-import { motion, Variants, Transition } from "framer-motion";
+import { motion } from "framer-motion";
 
 const solutions = [
-  {
-    title: "🗨️ AI Chatbots",
-    desc: "Smart, human-like chatbots that handle queries 24/7 on your website and social platforms.",
-  },
-  {
-    title: "🎙️ AI Voice Agents",
-    desc: "Natural voice assistants that schedule meetings, handle bookings, and support your customers via calls.",
-  },
-  {
-    title: "⚙️ Custom AI Solutions",
-    desc: "Tailored automation for your business operations — built to optimize workflows and boost ROI.",
-  },
+  { title: "💬 AI Chatbots", desc: "Human-like chatbots available 24/7." },
+  { title: "🎙️ Voice Agents", desc: "Automated call-based customer support." },
+  { title: "⚙️ Custom AI", desc: "Tailored automation for your workflow." },
 ];
-
-// typed transition for container
-const containerTransition: Transition = {
-  staggerChildren: 0.12,
-  when: "beforeChildren",
-  duration: 0.5,
-};
-
-// typed transitions for cards
-const cardShowTransition: Transition = {
-  type: "spring",
-  stiffness: 110,
-  damping: 16,
-};
-
-const cardHoverTransition: Transition = {
-  type: "spring",
-  stiffness: 300,
-  damping: 20,
-};
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0, y: 8 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: containerTransition,
-  },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 18, scale: 0.995 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: cardShowTransition,
-  },
-  hover: {
-    scale: 1.03,
-    y: -6,
-    transition: cardHoverTransition,
-  },
-};
 
 export default function Solutions() {
   return (
@@ -67,71 +14,26 @@ export default function Solutions() {
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-poppins font-bold text-[#0A2540] mb-4"
+          className="text-3xl md:text-4xl font-poppins font-bold text-black mb-4"
         >
           Our Solutions
         </motion.h2>
+        <p className="max-w-2xl mx-auto text-gray-600 mb-12">
+          Intelligent systems that automate and simplify communication.
+        </p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
-          className="max-w-2xl mx-auto text-gray-600 mb-12"
-        >
-          We build intelligent systems that automate communication, improve customer experience,
-          and enhance business efficiency.
-        </motion.p>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid md:grid-cols-3 gap-8"
-        >
+        <div className="grid md:grid-cols-3 gap-8">
           {solutions.map((s, i) => (
             <motion.div
               key={i}
-              variants={cardVariants}
-              whileHover="hover"
-              className="rounded-2xl bg-[#F9FBFD] p-8 shadow-sm border border-gray-200 transition-shadow"
-              style={{ willChange: "transform, box-shadow, border-color" }}
+              whileHover={{ scale: 1.02 }}
+              className="rounded-2xl bg-gray-50 p-8 border border-gray-300 shadow-sm hover:shadow-md"
             >
-              <div className="flex flex-col h-full">
-                <h3 className="text-xl font-semibold text-[#0A2540] mb-3">{s.title}</h3>
-                <p className="text-gray-600 leading-relaxed flex-1">{s.desc}</p>
-
-                <div className="mt-6 flex items-center justify-between gap-4">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-md border border-gray-200 hover:border-gray-300 transition-all"
-                    aria-label={`Get started with ${s.title}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                  >
-                    Get Started
-                  </a>
-
-                  <button
-                    className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-                    aria-label={`Learn more about ${s.title}`}
-                    onClick={() => {
-                      const el = document.getElementById("contact");
-                      el?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                  >
-                    Learn more →
-                  </button>
-                </div>
-              </div>
+              <h3 className="text-xl font-semibold text-black mb-3">{s.title}</h3>
+              <p className="text-gray-600">{s.desc}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
