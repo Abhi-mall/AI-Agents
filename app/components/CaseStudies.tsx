@@ -67,13 +67,10 @@ export default function CaseStudies() {
               className="p-8 bg-[#262626] border border-gray-700 rounded-2xl shadow-sm hover:shadow-lg text-left"
               aria-label={`${c.title} case study`}
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4">
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-1">{c.title}</h3>
                   <p className="text-gray-300 mb-4">{c.result}</p>
-                </div>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#1f1f1f] text-sm text-gray-300">
-                  <span className="font-medium">Pilot</span>
                 </div>
               </div>
 
@@ -87,18 +84,6 @@ export default function CaseStudies() {
                   </li>
                 ))}
               </ul>
-
-              <div className="flex items-center gap-4">
-                <a
-                  href="#"
-                  className="text-sm font-medium px-4 py-2 rounded-lg border border-gray-600 hover:bg-[#2a2a2a] text-gray-200"
-                >
-                  Learn More
-                </a>
-                <button className="text-sm bg-white text-black px-4 py-2 rounded-lg font-semibold shadow-sm hover:bg-gray-100">
-                  Start a Pilot
-                </button>
-              </div>
             </motion.article>
           ))}
         </div>

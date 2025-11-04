@@ -1,7 +1,7 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-
-
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "MaxTern AI",
@@ -15,10 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-inter bg-[#F9FBFD] text-[#1B1F23]" >
+      <head>
+        {/* If you use next/script below, you don't need to put anything here */}
+      </head>
+      <body className="font-inter bg-[#F9FBFD] text-[#1B1F23]">
         {children}
-       
-        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
       </body>
     </html>
   );

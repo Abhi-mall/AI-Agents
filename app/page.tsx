@@ -1,6 +1,6 @@
+// app/page.tsx
 "use client";
 
-import Script from "next/script";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import Solutions from "@/app/components/Solution";
@@ -20,13 +20,7 @@ export default function Home() {
       <CTABanner />
       <Footer />
 
-      {/* ElevenLabs Voice Agent */}
-      <elevenlabs-convai agent-id="agent_4301k924wv47esbash1bb186nqwm"></elevenlabs-convai>
-
-      {/* Load ElevenLabs Widget Script */}
      
     </>
   );
 }
-
-

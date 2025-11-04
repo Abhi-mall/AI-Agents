@@ -1,107 +1,84 @@
 "use client";
 import { motion } from "framer-motion";
 
-const cases = [
+const benefits = [
   {
-    title: "Retail",
-    result: "65% boost in engagement.",
-    desc: "Contextual chat and CTA-driven flows that capture intent and convert browsers into buyers across web & WhatsApp.",
-    highlights: [
-      "Product lookups + quick checkout help",
-      "CRM sync for personalized follow-ups",
-      "Handles promo spikes without extra headcount",
-    ],
+    title: "🕒 24/7 Support Automation",
+    desc: "Instantly respond to customers any time of day without human intervention.",
   },
   {
-    title: "Healthcare",
-    result: "80% appointments automated.",
-    desc: "Voice + chat automation that books, reschedules, and reminds patients — with safe human handoff for clinical queries.",
-    highlights: [
-      "Two-way SMS/voice confirmations",
-      "Integration with scheduling systems",
-      "Reduced admin hours and fewer no-shows",
-    ],
+    title: "🔧 Customizable Workflows",
+    desc: "Easily customisable  AI bots and voice agents to suit your business process and tone.",
   },
   {
-    title: "E-Commerce",
-    result: "70% faster response times.",
-    desc: "Omnichannel order-status automation that answers tracking, returns and refund questions instantly, and creates tickets for exceptions.",
-    highlights: [
-      "Order backend integration",
-      "Smart routing to agents for complex cases",
-      "Prebuilt quick-reply templates for peak events",
-    ],
+    title: "🔗 Easy Integrations",
+    desc: "Connect seamlessly with WhatsApp, CRM, and websites in minutes.",
   },
   {
-    title: "Education",
-    result: "60% better interaction.",
-    desc: "Knowledge-driven assistant for admissions, course queries and scheduling that improves student engagement and advisor efficiency.",
-    highlights: [
-      "Course recommendations & FAQ flows",
-      "Advisor booking automation",
-      "Integrates with calendars & student CRM",
-    ],
+    title: "🔒 Scalable & Secure",
+    desc: "Reliable and data-protected solutions that grow with your business.",
   },
 ];
 
-export default function CaseStudies() {
+export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-[#212121]">
+    <section id="about" className="py-20 bg-[#212121]">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          Case Studies & Results
-        </h2>
-        <p className="text-gray-300 mb-12">
-          See how automation transformed customer experience.
-        </p>
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-poppins font-bold text-white"
+        >
+          Why Businesses Choose Affix AI
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {cases.map((c, i) => (
-            <motion.article
-              key={c.title}
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 12 }}
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-4 text-gray-300 max-w-2xl mx-auto"
+        >
+          We help businesses deliver smarter, faster, and more personalized
+          customer experiences with our intelligent AI automation solutions.
+        </motion.p>
+
+        {/* Benefits */}
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          {benefits.map((b, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: i * 0.06 }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="p-8 bg-[#262626] border border-gray-700 rounded-2xl shadow-sm hover:shadow-lg text-left"
-              aria-label={`${c.title} case study`}
+              whileHover={{ scale: 1.03 }}
+              className="p-6 bg-[#262626] border border-gray-700 rounded-xl shadow-sm hover:shadow-lg transition-all text-left"
+              role="article"
+              aria-label={b.title}
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">{c.title}</h3>
-                  <p className="text-gray-300 mb-4">{c.result}</p>
-                </div>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#1f1f1f] text-sm text-gray-300">
-                  <span className="font-medium">Pilot</span>
-                </div>
-              </div>
-
-              <p className="text-gray-300 mb-4">{c.desc}</p>
-
-              <ul className="mb-6 text-sm text-gray-400 space-y-2 list-inside">
-                {c.highlights.map((h, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="mt-0.5">•</span>
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex items-center gap-4">
-                <a
-                  href="#"
-                  className="text-sm font-medium px-4 py-2 rounded-lg border border-gray-600 hover:bg-[#2a2a2a] text-gray-200"
-                >
-                  Learn More
-                </a>
-                <button className="text-sm bg-white text-black px-4 py-2 rounded-lg font-semibold shadow-sm hover:bg-gray-100">
-                  Start a Pilot
-                </button>
-              </div>
-            </motion.article>
+              <h3 className="text-xl font-semibold text-white mb-2">{b.title}</h3>
+              <p className="text-gray-300">{b.desc}</p>
+            </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <button className="bg-white text-black px-6 py-3 rounded-lg font-medium shadow-md hover:bg-gray-100 transition">
+            Book a Free Consultation
+          </button>
+        </motion.div>
       </div>
     </section>
   );
