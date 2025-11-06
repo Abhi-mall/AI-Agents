@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
 return (
@@ -52,8 +53,10 @@ whileHover={{ scale: 1.05 }}
 whileTap={{ scale: 0.98 }}
 className="bg-white text-black px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:bg-gray-100"
 >
-Book a Free Consultation
-<ArrowRight className="w-5 h-5" />
+    <Link href="https://calendly.com/carefoxai/30min" className="flex items-center gap-2">
+      Book a Free Consultation
+      <ArrowRight className="w-5 h-5" />
+    </Link>
 </motion.button>
 
 

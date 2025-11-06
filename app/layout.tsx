@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
+import VoiceAgent from "./components/VoiceAgent";
 
 export const metadata: Metadata = {
   title: "MaxTern AI",
@@ -20,6 +20,7 @@ export default function RootLayout({
       </head>
       <body className="font-inter bg-[#F9FBFD] text-[#1B1F23]">
         {children}
+        <VoiceAgent />
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,9 +32,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#home" className="inline-flex items-center gap-2">
-          <h1 className="text-2xl font-extrabold font-poppins text-white leading-none">
-            <span className="text-gray-300">Affix</span> AI
-          </h1>
+          <Image src="/FOXAI LOGO.png" alt="FoxAI Logo" width={100} height={100} />
         </a>
 
         {/* Desktop Nav */}
