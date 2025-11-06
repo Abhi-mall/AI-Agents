@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/dist/client/link";
 
 
 export default function CTABanner() {
@@ -15,7 +17,7 @@ className="relative z-10 max-w-3xl mx-auto px-6"
 Ready to Bring <span className="text-gray-200">AI Power</span> to Your Business?
 </h2>
 <p className="text-gray-300 mb-8 text-lg">
-Automate conversations and enhance experiences with Foxai.
+Automate conversations and enhance experiences with Fox AI.
 </p>
 
 
@@ -24,7 +26,10 @@ whileHover={{ scale: 1.05 }}
 whileTap={{ scale: 0.97 }}
 className="bg-white text-black px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-100"
 >
-Get Started Now
+<Link href="https://calendly.com/carefoxai/30min" className="flex items-center gap-2">
+      Get Started Today
+      <ArrowRight className="w-5 h-5" />
+    </Link>
 </motion.button>
 </motion.div>
 </section>

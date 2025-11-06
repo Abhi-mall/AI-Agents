@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/dist/client/link";
 
 const benefits = [
   {
@@ -32,7 +34,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-poppins font-bold text-white"
         >
-          Why Businesses Choose Foxai
+          Why Businesses Choose FoxAI
         </motion.h2>
 
         {/* Subtext */}
@@ -76,7 +78,10 @@ export default function WhyChooseUs() {
           className="mt-12"
         >
           <button className="bg-white text-black px-6 py-3 rounded-lg font-medium shadow-md hover:bg-gray-100 transition">
-            Book a Free Consultation
+            <Link href="https://calendly.com/carefoxai/30min" className="flex items-center gap-2">
+      Book a Free Consultation
+      <ArrowRight className="w-5 h-5" />
+    </Link>
           </button>
         </motion.div>
       </div>
