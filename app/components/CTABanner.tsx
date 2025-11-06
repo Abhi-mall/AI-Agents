@@ -15,7 +15,7 @@ className="relative z-10 max-w-3xl mx-auto px-6"
 Ready to Bring <span className="text-gray-200">AI Power</span> to Your Business?
 </h2>
 <p className="text-gray-300 mb-8 text-lg">
-Automate conversations and enhance experiences with Affix AI.
+Automate conversations and enhance experiences with Foxai.
 </p>
 
 

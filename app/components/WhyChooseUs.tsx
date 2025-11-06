@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-poppins font-bold text-white"
         >
-          Why Businesses Choose Affix AI
+          Why Businesses Choose Foxai
         </motion.h2>
 
         {/* Subtext */}
