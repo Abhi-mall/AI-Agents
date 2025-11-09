@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaInstagram, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>
-          <h3 className="font-bold text-xl mb-3">Foxai</h3>
+          <Image src="/FOXAI LOGO.png" alt="FoxAI Logo" width={100} height={100} />
           <p className="text-gray-300 text-sm">
             Intelligent Automation for Businesses.
           </p>
