@@ -34,7 +34,7 @@ export default function Footer() {
           <h4 className="font-semibold mb-2">Follow Us</h4>
           <div className="flex gap-4 text-gray-300 text-2xl">
             <a
-              href="https://www.instagram.com/abhishek__mall/"
+              href="https://www.instagram.com/foxai.automation/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 transition"
@@ -42,7 +42,7 @@ export default function Footer() {
               <FaInstagram />
             </a>
             <a
-              href="https://www.linkedin.com/in/foxai/"
+              href="https://www.linkedin.com/company/foxai-automation"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500 transition"
@@ -58,7 +58,7 @@ export default function Footer() {
               <FaTwitter />
             </a>
             <a
-              href="https://www.facebook.com/profile.php?id=100005614666464"
+              href="https://www.facebook.com/foxaiautomation/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600 transition"
