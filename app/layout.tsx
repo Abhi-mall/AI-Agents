@@ -4,8 +4,8 @@ import "./globals.css";
 import VoiceAgent from "./components/VoiceAgent";
 
 export const metadata: Metadata = {
-  title: "MaxTern AI",
-  description: "MaxTern AI - Your Ultimate AI Companion for Everything!",
+  title: "FoxAI Automation",
+  description: "FoxAI - Your Ultimate AI Companion for Everything!",
 };
 
 export default function RootLayout({
